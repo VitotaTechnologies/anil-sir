@@ -76,7 +76,7 @@ section{border-radius:20px;margin:20px 0}
 <main class="wrap">
 
 <header class="hero">
-<div class="eyebrow">A little surprise for our favourite Maths Sir</div>
+<div class="eyebrow">A little surprise for our favourite Computer Sir</div>
 <h1>Happy<br>Diwali!</h1>
 <p>May your life be filled with happiness, good health, success and unlimited reasons to smile. ✨</p>
 <button class="btn" onclick="document.getElementById('greeting').scrollIntoView({behavior:'smooth'})">Open Your Surprise ✨</button>
@@ -87,7 +87,7 @@ section{border-radius:20px;margin:20px 0}
 <section id="greeting">
 <div class="section-tag">With respect & lots of wishes</div>
 <h2>Dear Anil sir ❤️</h2>
-<p class="intro">Aap sirf Maths nahi padhate, aap humein patience, discipline aur problems ko solve karna bhi sikhate hain. Is Diwali, aapke ghar aur zindagi mein khushiyon ki roshni hamesha bani rahe. Aapka har din perfect answer ki tarah khubsurat ho!</p>
+<p class="intro">Aap sirf Computer nahi padhate, aap humein patience, discipline aur problems ko solve karna bhi sikhate hain. Is Diwali, aapke ghar aur zindagi mein khushiyon ki roshni hamesha bani rahe. Aapka har din perfect answer ki tarah khubsurat ho!</p>
 
 <div class="photos">
 <article class="photo-card">
@@ -100,7 +100,7 @@ section{border-radius:20px;margin:20px 0}
 </article>
 </div>
 
-<div class="note" style="margin-top:22px">📐 <b>Maths wali special wish:</b> Sir, aapki life mein happiness ka graph hamesha increasing rahe, tension ka value zero ho aur success kabhi divide na ho! 😂</div>
+<div class="note" style="margin-top:22px">📐 <b>Computer wali special wish:</b> Sir, aapki life mein happiness ka graph hamesha increasing rahe, tension ka value zero ho aur success kabhi divide na ho! 😂</div>
 </section>
 
 <section>
@@ -138,7 +138,7 @@ section{border-radius:20px;margin:20px 0}
 </section>
 
 <footer>
-Made with respect, a little maths, and lots of festive love. ❤️<br>
+Made with respect, a little Computer, and lots of festive love. ❤️<br>
 <b>From your student, Shahmir</b><br>
 Wishing Anil sir and family a very Happy Diwali! 🪔
 </footer>
@@ -155,11 +155,11 @@ q:"1. Sir, agar student holiday homework na kare, toh sabse pehle kya karna chah
 a:["Pyaar se samjhana ❤️","Double homework dena 📚","Parents ko call karna ☎️","Pehle khud Diwali enjoy karna 😎"]
 },
 {
-q:"2. Maths mein students ko sabse zyada darr kis cheez se lagta hai?",
+q:"2. Computer mein students ko sabse zyada darr kis cheez se lagta hai?",
 a:["Algebra ke x aur y se 😵","Geometry ke proofs se 📐","Surprise test se 😭","Sir ke 'board par aao' se 😂"]
 },
 {
-q:"3. Agar aapko ek din ke liye Maths se chhutti mil jaaye toh kya karenge?",
+q:"3. Agar aapko ek din ke liye Computer se chhutti mil jaaye toh kya karenge?",
 a:["Family ke saath time ❤️","Full day sleep 😴","Trip par jaunga 🚗","Phir bhi questions banaunga! 🤓"]
 },
 {
@@ -271,9 +271,9 @@ const stars=$('stars');
 for(let i=0;i<75;i++){
 let s=document.createElement('i');
 s.className='star';
-s.style.left=Math.random()*100+'%';
-s.style.top=Math.random()*100+'%';
-s.style.animationDelay=Math.random()*3+'s';
+s.style.left=Computer.random()*100+'%';
+s.style.top=Computer.random()*100+'%';
+s.style.animationDelay=Computer.random()*3+'s';
 stars.appendChild(s);
 }
 
@@ -281,9 +281,9 @@ function confetti(){
 for(let i=0;i<90;i++){
 let c=document.createElement('i');
 c.className='confetti';
-c.style.left=Math.random()*100+'%';
+c.style.left=Computer.random()*100+'%';
 c.style.background=['#ffd778','#ff6a9a','#7be4bf','#fff1d5'][i%4];
-c.style.animationDelay=Math.random()*1.5+'s';
+c.style.animationDelay=Computer.random()*1.5+'s';
 document.body.appendChild(c);
 setTimeout(()=>c.remove(),5000);
 }
@@ -292,9 +292,9 @@ setTimeout(()=>c.remove(),5000);
 setInterval(()=>{
 let s=document.createElement('span');
 s.className='spark';
-s.textContent=['✨','🪔','🎆','🌟'][Math.floor(Math.random()*4)];
-s.style.left=Math.random()*100+'%';
-s.style.animationDuration=(5+Math.random()*5)+'s';
+s.textContent=['✨','🪔','🎆','🌟'][Computer.floor(Computer.random()*4)];
+s.style.left=Computer.random()*100+'%';
+s.style.animationDuration=(5+Computer.random()*5)+'s';
 document.body.appendChild(s);
 setTimeout(()=>s.remove(),10000);
 },700);
