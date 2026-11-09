@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#120b20">
+<title>Happy Diwali, Vikaas Sir! ✨</title>
+<style>
+:root{--gold:#ffd778;--gold2:#ffb52e;--cream:#fff3d5;--bg:#10091d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:Georgia,serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 15% 15%,#5c1c48,transparent 35%),radial-gradient(ellipse at 85% 25%,#183f45,transparent 32%),linear-gradient(145deg,#10091d,#24102e 55%,#0b1723)}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff4c7;box-shadow:0 0 10px #ffd778;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+.wrap{position:relative;z-index:1;max-width:1000px;margin:auto;padding:22px 18px 70px}
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;color:#ffdc8b;font:600 11px Arial}
+h1{font-size:clamp(44px,10vw,92px);line-height:.98;margin:18px 0 12px;color:#ffe7a6;text-shadow:0 0 12px #ffb52e,0 0 38px #e76a35;animation:glow 3s infinite alternate}
+@keyframes glow{to{text-shadow:0 0 22px #ffd778,0 0 65px #ff6b3d}}
+.hero p{font:16px/1.7 Arial;color:#f7dfc4;max-width:600px}
+.btn{border:0;border-radius:999px;padding:15px 25px;background:linear-gradient(110deg,#ffe7a1,#ffb52e,#ff7a59);color:#32162a;font-weight:800;cursor:pointer;font-size:15px;box-shadow:0 8px 28px #ff9d3744;transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.diya{width:78px;height:42px;margin:34px auto 0;background:linear-gradient(#ffdc8b,#d85a27);border-radius:8px 8px 45px 45px;position:relative;box-shadow:0 12px 32px #ff842a88;animation:flicker 1.8s infinite alternate}
+.diya:before{content:"";position:absolute;left:31px;top:-37px;width:17px;height:39px;background:radial-gradient(ellipse at 50% 70%,#fff9bd,#ffce43 35%,#ff692d 68%,transparent 72%);border-radius:50%;filter:drop-shadow(0 0 12px #ffb52e);animation:flame .8s infinite alternate}
+@keyframes flicker{to{filter:brightness(1.25)}}
+@keyframes flame{to{transform:scale(.82) rotate(5deg)}}
+section{margin:32px 0;padding:clamp(20px,5vw,42px);border:1px solid #ffd77855;border-radius:26px;background:linear-gradient(145deg,#ffffff0d,#ffffff05);box-shadow:0 18px 60px #0004;backdrop-filter:blur(9px)}
+.section-tag{font:700 11px Arial;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+h2{font-size:clamp(29px,6vw,48px);margin:10px 0 15px;color:#ffe6a4}
+.intro{font:16px/1.8 Arial;color:#f7e8d7}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.photo-card{border-radius:20px;overflow:hidden;background:#fff1d9;color:#43251c;box-shadow:0 12px 35px #0006;transform:translateY(24px);opacity:0;transition:all .8s}
+.photo-card.show{transform:none;opacity:1}
+.photo-card img{display:block;width:100%;height:360px;object-fit:cover;object-position:center 25%}
+.photo-card:nth-child(2) img{object-position:center 18%}
+.photo-card div{padding:13px 16px;font:700 13px Arial;text-align:center}
+.note{padding:18px;border-left:3px solid var(--gold2);background:#ffdc8b12;border-radius:0 15px 15px 0;font:15px/1.8 Arial}
+.question-intro{font:15px/1.7 Arial;color:#f5dfca}
+.progress{height:7px;background:#ffffff20;border-radius:10px;overflow:hidden;margin:20px 0}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,#ff8a57,#ffe18a);transition:width .4s}
+.qcount{font:700 12px Arial;color:#ffda8a;letter-spacing:2px}
+.question{font:clamp(21px,4.8vw,31px)/1.35 Georgia;margin:15px 0 20px;color:#fff0c8}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.option{padding:15px 14px;text-align:left;border:1px solid #ffd77855;background:#ffffff0a;color:#fff1dc;border-radius:14px;font:14px/1.5 Arial;cursor:pointer;transition:.2s}
+.option:hover{background:#ffcf7022;border-color:#ffda8a;transform:translateY(-2px)}
+.option.selected{background:#ffcf7030;border-color:#ffda8a;box-shadow:inset 0 0 0 1px #ffda8a}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.nav .btn{padding:12px 20px}
+.small{font:12px/1.6 Arial;color:#d9c6b5}
+#result{display:none;text-align:center}
+#result.show{display:block;animation:pop .6s ease}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.summary{white-space:pre-wrap;text-align:left;background:#08061088;padding:16px;border-radius:14px;font:13px/1.7 monospace;max-height:300px;overflow:auto;margin:20px 0;color:#ffe9bf}
+footer{text-align:center;padding:35px 10px;color:#d9c6b5;font:12px/1.8 Arial}
+.spark{position:fixed;bottom:-30px;font-size:20px;animation:rise linear forwards;pointer-events:none;z-index:2}
+@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+.confetti{position:fixed;top:-20px;width:7px;height:13px;z-index:9;pointer-events:none;animation:fall 3s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.2}}
+@media(max-width:650px){
+.photos{grid-template-columns:1fr}
+.photo-card img{height:390px}
+.options{grid-template-columns:1fr}
+.hero{min-height:86vh}
+.wrap{padding:12px 13px 45px}
+section{border-radius:20px;margin:20px 0}
+.nav{align-items:stretch}
+.nav .btn{flex:1;padding:13px 12px}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<main class="wrap">
+
+<header class="hero">
+<div class="eyebrow">A little surprise for our favourite Maths Sir</div>
+<h1>Happy<br>Diwali!</h1>
+<p>May your life be filled with happiness, good health, success and unlimited reasons to smile. ✨</p>
+<button class="btn" onclick="document.getElementById('greeting').scrollIntoView({behavior:'smooth'})">Open Your Surprise ✨</button>
+<div class="diya"></div>
+<div style="margin-top:30px;font:11px Arial;letter-spacing:2px;color:#e9c99a">SCROLL DOWN FOR THE SURPRISE ↓</div>
+</header>
+
+<section id="greeting">
+<div class="section-tag">With respect & lots of wishes</div>
+<h2>Dear Vikaas Sir ❤️</h2>
+<p class="intro">Aap sirf Maths nahi padhate, aap humein patience, discipline aur problems ko solve karna bhi sikhate hain. Is Diwali, aapke ghar aur zindagi mein khushiyon ki roshni hamesha bani rahe. Aapka har din perfect answer ki tarah khubsurat ho!</p>
+
+<div class="photos">
+<article class="photo-card">
+<img src="assets/1.jpeg" alt="Vikaas Sir">
+<div>Our Respected Vikaas Sir 🇮🇳</div>
+</article>
+<article class="photo-card">
+<img src="assets/2.jpeg" alt="Vikaas Sir">
+<div>Always inspiring, always respected ✨</div>
+</article>
+</div>
+
+<div class="note" style="margin-top:22px">📐 <b>Maths wali special wish:</b> Sir, aapki life mein happiness ka graph hamesha increasing rahe, tension ka value zero ho aur success kabhi divide na ho! 😂</div>
+</section>
+
+<section>
+<div class="section-tag">A very important question</div>
+<h2>Sir, ek baat bataiye… 😄</h2>
+<p class="intro">Sir Diwali sahi ja rahi hai ya abhi bhi yahi soch rahe hain ki students ne holiday homework nahi kiya, toh kya punishment deni hai? 😂</p>
+<p class="small">Iska answer bhi neeche wale quiz ke saath submit hoga.</p>
+</section>
+
+<section id="quiz">
+<div class="section-tag">The legendary teacher quiz</div>
+<h2>Vikaas Sir Quiz 🧠</h2>
+<p class="question-intro">Sir, bas 7 chhote-se sawaal hain. Honestly answer kariyega… students ka future isi par depend karta hai! 😂</p>
+
+<div id="quizArea">
+<div class="progress"><span id="bar"></span></div>
+<div class="qcount" id="qcount">QUESTION 1 OF 7</div>
+<div class="question" id="question"></div>
+<div class="options" id="options"></div>
+<div class="nav">
+<button class="btn" id="back" onclick="previous()" style="visibility:hidden;background:#ffffff18;color:#fff">← Back</button>
+<button class="btn" id="next" onclick="next()">Next Question →</button>
+</div>
+<p class="small" style="margin-top:15px">Aapka selected answer save hota rahega. Last mein Submit dabaiye.</p>
+</div>
+
+<div id="result">
+<h2>Quiz Complete! 🎉</h2>
+<p class="intro">Thank you, Sir! Aapke answers mil gaye hain. Ab bas unhe Shahmir tak pahunchana hai.</p>
+<div class="summary" id="summary"></div>
+<button class="btn" onclick="sendWhatsApp()">Send Answers on WhatsApp 💬</button>
+<p class="small" style="margin-top:14px">WhatsApp khulega aur answers ka message ready milega. Kripya Send button dabakar message bhej dein.</p>
+<button class="btn" onclick="copyAnswers()" style="margin-top:10px;background:linear-gradient(110deg,#f9e8cf,#d7b7ff)">Copy Answers</button>
+</div>
+</section>
+
+<footer>
+Made with respect, a little maths, and lots of festive love. ❤️<br>
+<b>From your student, Shahmir</b><br>
+Wishing Vikaas Sir and family a very Happy Diwali! 🪔
+</footer>
+</main>
+
+<script>
+const questions=[
+{
+q:"Special Diwali question: Sir, Diwali sahi ja rahi hai ya abhi bhi yahi soch rahe hain ki students ne holiday homework nahi kiya, toh kya punishment deni hai? 😂",
+a:["Diwali mast ja rahi hai! 🪔","Homework ki tension abhi bhi hai 😂","Diwali ke baad sabki class lunga! 😈","Students ko maaf kiya… iss baar! ❤️"]
+},
+{
+q:"1. Sir, agar student holiday homework na kare, toh sabse pehle kya karna chahiye? 😂",
+a:["Pyaar se samjhana ❤️","Double homework dena 📚","Parents ko call karna ☎️","Pehle khud Diwali enjoy karna 😎"]
+},
+{
+q:"2. Maths mein students ko sabse zyada darr kis cheez se lagta hai?",
+a:["Algebra ke x aur y se 😵","Geometry ke proofs se 📐","Surprise test se 😭","Sir ke 'board par aao' se 😂"]
+},
+{
+q:"3. Agar aapko ek din ke liye Maths se chhutti mil jaaye toh kya karenge?",
+a:["Family ke saath time ❤️","Full day sleep 😴","Trip par jaunga 🚗","Phir bhi questions banaunga! 🤓"]
+},
+{
+q:"4. Jo student bole 2 + 2 = 5, uske saath kya karna chahiye?",
+a:["Ek aur chance dena 😇","Calculator gift karna 🧮","Usse board par bulana 😂","Uska confidence appreciate karna 😎"]
+},
+{
+q:"5. Sir, aapke hisaab se students zyada intelligent hain ya calculator?",
+a:["Students, obviously! 🧠","Calculator 😂","Dono ka combination","Ye question syllabus mein nahi hai!"]
+},
+{
+q:"6. Diwali par students ko aap kya gift dena pasand karenge?",
+a:["Extra holiday 🎉","No homework for a week 😍","Ek easy test 😅","Sabko sweets aur blessings 🍬"]
+}
+];
+
+let answers=Array(7).fill(null);
+let current=0;
+const $=id=>document.getElementById(id);
+
+function render(){
+$('qcount').textContent=`QUESTION ${current+1} OF 7`;
+$('question').textContent=questions[current].q;
+$('options').innerHTML='';
+
+questions[current].a.forEach((a,i)=>{
+let b=document.createElement('button');
+b.className='option'+(answers[current]===i?' selected':'');
+b.textContent=a;
+b.onclick=()=>{
+answers[current]=i;
+render();
+};
+$('options').appendChild(b);
+});
+
+$('bar').style.width=((current+1)/7*100)+'%';
+$('back').style.visibility=current===0?'hidden':'visible';
+$('next').textContent=current===6?'Submit Answers 🎁':'Next Question →';
+}
+
+function next(){
+if(answers[current]===null){
+alert('Sir, ek option toh select kijiye! 😊');
+return;
+}
+if(current<6){
+current++;
+render();
+}else{
+showResult();
+}
+}
+
+function previous(){
+if(current>0){
+current--;
+render();
+}
+}
+
+function showResult(){
+$('quizArea').style.display='none';
+$('result').classList.add('show');
+
+const lines=[
+'VIKAAS SIR – DIWALI QUIZ ANSWERS',
+'================================',
+''
+];
+
+questions.forEach((q,i)=>{
+lines.push(`${i+1}. ${q.q}\nAnswer: ${q.a[answers[i]]}`);
+});
+
+lines.push('','Sent with respect by Shahmir ❤️');
+$('summary').textContent=lines.join('\n');
+confetti();
+}
+
+function message(){
+return $('summary').textContent+'\n\n(Submitted from Vikaas Sir Diwali Surprise Website)';
+}
+
+function sendWhatsApp(){
+const url='https://wa.me/919893138826?text='+encodeURIComponent(message());
+window.open(url,'_blank');
+}
+
+async function copyAnswers(){
+try{
+await navigator.clipboard.writeText(message());
+alert('Answers copied! Ab WhatsApp par paste kar sakte hain.');
+}catch(e){
+alert('Please select and copy the answers shown above.');
+}
+}
+
+render();
+
+setTimeout(()=>{
+document.querySelectorAll('.photo-card').forEach((el,i)=>{
+setTimeout(()=>el.classList.add('show'),i*250);
+});
+},500);
+
+const stars=$('stars');
+
+for(let i=0;i<75;i++){
+let s=document.createElement('i');
+s.className='star';
+s.style.left=Math.random()*100+'%';
+s.style.top=Math.random()*100+'%';
+s.style.animationDelay=Math.random()*3+'s';
+stars.appendChild(s);
+}
+
+function confetti(){
+for(let i=0;i<90;i++){
+let c=document.createElement('i');
+c.className='confetti';
+c.style.left=Math.random()*100+'%';
+c.style.background=['#ffd778','#ff6a9a','#7be4bf','#fff1d5'][i%4];
+c.style.animationDelay=Math.random()*1.5+'s';
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),5000);
+}
+}
+
+setInterval(()=>{
+let s=document.createElement('span');
+s.className='spark';
+s.textContent=['✨','🪔','🎆','🌟'][Math.floor(Math.random()*4)];
+s.style.left=Math.random()*100+'%';
+s.style.animationDuration=(5+Math.random()*5)+'s';
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),10000);
+},700);
+</script>
+</body>
+</html>
